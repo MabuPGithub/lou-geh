@@ -1,0 +1,29 @@
+<%= form_with model: @supplier do |form| %>
+    <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        <% @supplier.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :contact_number %><br>
+        <%= form.text_field :contact_number %><br>
+        <% @supplier.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :address %><br>
+        <%= form.text_field :address %><br>
+        <% @supplier.errors.full_messages_for(:address).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
