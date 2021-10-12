@@ -1,0 +1,15 @@
+<h1>Suppliers</h1>
+<%= link_to "Add Supplier", new_supplier_path %>
+<ul>
+  <% @suppliers.each do |supplier| %>
+    <li>
+      <a href="<%= supplier_path(supplier)%>">
+        <%= supplier.name %>
+      </a>
+    </li>
+    <%= link_to "Destroy", supplier_path(supplier),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  <% end %>
+</ul>
+
