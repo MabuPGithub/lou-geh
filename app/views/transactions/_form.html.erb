@@ -1,8 +1,8 @@
-<%= form_with model: @item do |form| %>
+<%= form_with model: @transaction do |form| %>
     <div>
         <%= form.label :product_description %><br>
         <%= form.text_field :product_description %>
-        <% @item.errors.full_messages_for(:product_description).each do |message| %>
+        <% @transaction.errors.full_messages_for(:product_description).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
@@ -10,7 +10,7 @@
     <div>
         <%= form.label :quantity %><br>
         <%= form.number_field :quantity %><br>
-        <% @item.errors.full_messages_for(:quantity).each do |message| %>
+        <% @transaction.errors.full_messages_for(:quantity).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
@@ -18,16 +18,15 @@
     <div>
         <%= form.label :cost %><br>
         <%= form.number_field :cost %><br>
-        <% @item.errors.full_messages_for(:cost).each do |message| %>
+        <% @transaction.errors.full_messages_for(:cost).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
     <div>
-        <%= form.label :delivered_by %><br>
-        <% options = options_from_collection_for_select(@supplier, 'id', 'name') %>
-        <%= form.select :delivered_by,  options %>
-        <% @item.errors.full_messages_for(:delivered_by).each do |message| %>
+        <%= form.label :customer_name %><br>
+        <%= form.text_field :customer_name %>
+        <% @transaction.errors.full_messages_for(:customer_name).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>

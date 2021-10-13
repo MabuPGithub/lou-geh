@@ -1,0 +1,15 @@
+<h1>transaction</h1>
+<%= link_to "Add transaction", new_transaction_path %>
+<ul>
+  <% @transactions.each do |transaction| %>
+    <li>
+      <a href="<%= transaction_path(transaction)%>">
+        <%= transaction.product_description %>
+        <%= transaction.quantity %>
+        <%= transaction.cost %>
+        <%= transaction.customer_name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
