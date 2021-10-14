@@ -1,15 +1,14 @@
-<h1>Items</h1>
-<%= link_to "Add Item", new_item_path %>
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <a href="<%= item_path(item)%>">
-        <%= item.product_description %>
-      </a>
-    </li>
-    <%= link_to "Destroy", item_path(item),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+<div class="body-container">  
+  <h1>Deliveries</h1>
+  <%= link_to "+ Record Delivery", new_item_path %>
+  <table id="table">
+    
+    <% @items.each do |item| %>
+    <tr>
+      <td><a href="<%= item_path(item) %>"><p><%= item.quantity %> (<%= item.product_description %>) costing Php <%= item.cost %> has been delivered by <%= item.delivered_by %> <p><span><%= time_ago_in_words(item.created_at) %> ago</span></a></td>
+      
+    </tr>
+    <% end %>
+  </table>
+</div>
 

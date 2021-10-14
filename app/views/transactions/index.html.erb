@@ -1,15 +1,14 @@
-<h1>transaction</h1>
-<%= link_to "Add transaction", new_transaction_path %>
-<ul>
-  <% @transactions.each do |transaction| %>
-    <li>
-      <a href="<%= transaction_path(transaction)%>">
-        <%= transaction.product_description %>
-        <%= transaction.quantity %>
-        <%= transaction.cost %>
-        <%= transaction.customer_name %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<div class="body-container">  
+  <h1>Transactions</h1>
 
+  <%= link_to '+ Record Transaction', new_transaction_path %>
+  <table id="table">
+    
+    <% @transactions.each do |transaction| %>
+    <tr>
+      <td><p><%= transaction.customer_name %> has bought <%= transaction.quantity %> of <%= transaction.product_description %> costing Php <%= transaction.cost %> <p><span><%= time_ago_in_words(transaction.created_at) %> ago</span></td>
+      
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,15 +1,23 @@
-<h1>Suppliers</h1>
-<%= link_to "Add Supplier", new_supplier_path %>
-<ul>
-  <% @suppliers.each do |supplier| %>
-    <li>
-      <a href="<%= supplier_path(supplier)%>">
-        <%= supplier.name %>
-      </a>
-    </li>
-    <%= link_to "Destroy", supplier_path(supplier),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+<div class="body-container">
+  <h1>Suppliers</h1>
+  <%= link_to "+ Add Supplier", new_supplier_path %>
+  <table id="table">
+    <tr>
+      <th>Unique Code</th>
+      <th>Company Name</th>
+      <th>Contact Number</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+    <% @suppliers.each do |supplier| %>
+    <tr>
+      <td><strong><%= supplier.unique_code %></strong></td>
+      <td><strong><%= supplier.name %></td>
+      <td><strong><%= supplier.contact_number %></td>
+      <td><strong><%= supplier.address %></td>
+      <td><strong><a href="<%= supplier_path(supplier) %>">View Supplier</a></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 

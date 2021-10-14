@@ -1,0 +1,37 @@
+input[type="submit"]{
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: orangered;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: fit-content;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(201, 55, 2)
+}
+
+input[type="submit"]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  input[type=text], input[type=email], input[type=password], input[type=number], input[type=date]
+  , input[type=file], textarea, select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .actions{
+      margin-bottom: 10px;
+  }

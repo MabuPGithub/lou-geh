@@ -9,6 +9,8 @@ class TransactionsController < ApplicationController
 
     def new
         @transaction = Transaction.new
+        @customers = Customer.all
+        @items = Item.all
     end
 
     def create
