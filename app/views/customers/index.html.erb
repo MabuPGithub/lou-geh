@@ -1,15 +1,21 @@
-<h1>Customers</h1>
-<%= link_to "Add Customer", new_customer_path %>
-<ul>
-  <% @customers.each do |customer| %>
-    <li>
-      <a href="<%= customer_path(customer)%>">
-        <%= customer.name %>
-      </a>
-    </li>
-    <%= link_to "Destroy", customer_path(customer),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+<div class="body-container">   
+  <h1>Customers</h1>
+  <%= link_to "+ Add Customer", new_customer_path %>
+  <table id="table">
+    <tr>
+      <th>Name</th>
+      <th>Contact Number</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+    <% @customers.each do |customer| %>
+    <tr>
+      <td><strong><%= customer.name %></td>
+      <td><strong><%= customer.contact_number %></td>
+      <td><strong><%= customer.address %></td>
+      <td><strong><a href="<%= customer_path(customer) %>">View Customer</a></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 

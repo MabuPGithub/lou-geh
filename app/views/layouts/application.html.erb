@@ -8,9 +8,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <div class="topnav" id="myTopnav">
+      <%= link_to 'Home', transactions_path %>
+      <%= link_to 'Suppliers', suppliers_path %>
+      <%= link_to 'Deliveries', items_path %>
+      <%= link_to 'Customers', customers_path %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

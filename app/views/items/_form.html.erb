@@ -25,7 +25,7 @@
 
     <div>
         <%= form.label :delivered_by %><br>
-        <% options = options_from_collection_for_select(@supplier, 'id', 'name') %>
+        <% options = options_from_collection_for_select(@supplier, 'name', 'name') %>
         <%= form.select :delivered_by,  options %>
         <% @item.errors.full_messages_for(:delivered_by).each do |message| %>
             <div><%= message %></div>

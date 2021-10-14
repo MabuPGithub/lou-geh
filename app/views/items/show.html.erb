@@ -1,4 +1,27 @@
-<%= link_to "Edit", edit_item_path(@item) %>
+<div class="body-container">
+    <div class="back-container">
+        <%= link_to "◄ Back", "/items" %>
+    </div>
+    <%= link_to "Edit Delivery", edit_item_path(@item) %>
+    <%= link_to "Delete Delivery", item_path(@item),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+    <h1>Delivery Information</h1>
 
-<h1><%= @item.product_description %></h1>
+    <div class="account-container">
+
+        <label>Product Description</label>
+        <input type="text" value='<%= @item.product_description %>' disabled>
+
+        <label>Quantity:</label>
+        <input type="text" value='<%= @item.quantity %>' disabled>
+
+        <label>Cost:</label>
+        <input type="text" value='<%= @item.cost %>' disabled>
+
+        <label>Delivered by:</label>
+        <input type="text" value='<%= @item.delivered_by %>' disabled>
+
+    </div>
+</div>
 
