@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prototype for Lou Geh Supermarket. Records necessary information and transactions. App runs only on Ruby on Rails and uses PostgreSQL. 
 
-Things you may want to cover:
+## Install the necessary Gems:
 
-* Ruby version
+```
+gem "rqrcode", "~> 2.0"
+```
 
-* System dependencies
+## Install active_storage:
 
-* Configuration
+```
+rails active_storage:install
+```
 
-* Database creation
+## Following Features:
+* Suppliers - Can add, read, update, and delete suppliers
 
-* Database initialization
+* Delivreies - The delivery receipt tab
 
-* How to run the test suite
+* Customers - List of Lou Geh's customers
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Transactions - Homepage that shows customer transactions
