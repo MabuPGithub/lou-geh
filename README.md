@@ -7,6 +7,10 @@ Prototype for Lou Geh Supermarket. Records necessary information and transaction
 ```
 gem "rqrcode", "~> 2.0"
 ```
+### In console:
+```
+bundle add chunky_png
+```
 
 ## Install active_storage:
 
